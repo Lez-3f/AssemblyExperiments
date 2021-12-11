@@ -54,7 +54,7 @@
 
 * **phase2**
 
-  在ctarget.s中进行查找，找到<touch2>的地址0x40185f以及栈顶寄存器%rsp的地址0x556120f0，以及由输出信息知道cookie的值为0x659eb3c8。本部分我们需要插入代码，先将插入的代码写进inject2.s:
+  在`ctarget.s`中进行查找，找到<touch2>的地址0x40185f以及栈顶寄存器`%rsp`的地址0x556120f0，以及由输出信息知道cookie的值为0x659eb3c8。本部分我们需要插入代码，先将插入的代码写进inject2.s:
 
   ```gas
    1 # inject codes of CIA-L2
@@ -64,7 +64,7 @@
     5 ret
   ```
 
-  然后我们使用gcc -c指令将inject2.s其转化为inject2.o文件，再用objdump -d看到该指令的16进制表示：
+  然后我们使用`gcc -c`指令将inject2.s其转化为inject2.o文件，再用objdump -d看到该指令的16进制表示：
 
   ```gas
   48 c7 c7 c8 b3 9e 65    mov    $0x659eb3c8,%rdi
@@ -144,7 +144,7 @@
 
   涉及到地址计算，我们必须需要在gadget中找到有相关功能的指令。
 
-  ![3c8fc69573ef72b718fdb37d04c6e9a](C:\Users\86181\AppData\Local\Temp\WeChat Files\3c8fc69573ef72b718fdb37d04c6e9a.png)
+  ![gadget](C:\Users\86181\Documents\21-22 秋\Asm\Lab\AttackLab\gadget.png)
 
   <add_xy>似乎就是为本阶段所准备的。
 
