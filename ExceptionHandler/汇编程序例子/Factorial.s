@@ -1,4 +1,4 @@
-#注意需要disable branch delay slot
+# 注意需要disable branch delay slot
 
 .text
 .globl main
@@ -36,12 +36,12 @@ fact:
      li 	$v0,1 		# Return 1
      jr 	$L1 		# Jump to code to return
 $L2:
-    lw 	$v1,0($fp) 	# Load n
-    subu	$v0,$v1,1 	# Compute n - 1
-    move 	$a0,$v0 		# Move value to $a0
-    jal 	fact 		# Call factorial function
-   lw 	$v1,0($fp) 	# Load n
-   mul 	$v0,$v0,$v1 	# Compute fact(n-1) * n
+     lw 	$v1,0($fp) 	# Load n
+     subu	$v0,$v1,1 	# Compute n - 1
+     move 	$a0,$v0 		# Move value to $a0
+     jal 	fact 		# Call factorial function
+     lw 	$v1,0($fp) 	# Load n
+     mul 	$v0,$v0,$v1 	# Compute fact(n-1) * n
 
 $L1: 			# Result is in $v0
     lw 	$ra, 20($sp)	# Restore $ra

@@ -10,8 +10,8 @@ msg:
         .text
         .globl main
 main: 
-        #lw $v0, 1($0)   # ADEL
-        #sw $v0, 1($0)   # ADES
+        lw $v0, 1($0)   # ADEL
+        sw $v0, 1($0)   # ADES
         lui $7, 32767
         lui $8, 32767
         add $9, $7, $8
