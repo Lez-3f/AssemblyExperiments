@@ -10,5 +10,5 @@ This course contains two experiments whose codes are recorded in this repo:
 
 * **Exception Handler**
 
-  
+  Test of MIPS Exception Handler(simple task)
 
